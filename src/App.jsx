@@ -30,31 +30,28 @@ function App() {
   return (
     <div className="app-container">
       <Header />
-      <div className="terminal-content">
+      <div className="main-content">
         <AddStudentForm onAdd={addStudent} />
         
-        <div className="stats-panel">
+        <div className="stats-container">
           <div className="stat-box">
-            <span className="stat-label">TOTAL</span>
-            <span className="stat-value">{total}</span>
+            <h4>Total Students</h4>
+            <p>{total}</p>
           </div>
           <div className="stat-box">
-            <span className="stat-label">PASSED</span>
-            <span className="stat-value">{passed}</span>
+            <h4>Passed</h4>
+            <p>{passed}</p>
           </div>
           <div className="stat-box">
-            <span className="stat-label">AVG SCORE</span>
-            <span className="stat-value">{avgScore}</span>
+            <h4>Average Score</h4>
+            <p>{avgScore}</p>
           </div>
         </div>
 
         <StudentTable students={students} onUpdateScore={updateScore} />
       </div>
-      <footer className="terminal-footer">
-        <div className="system-status">ACADEMIC TERMINAL - SECURE SESSION</div>
-        <div className="creator-bookmark">
-          <span className="flash">_</span>MADE BY TANISHQ
-        </div>
+      <footer>
+        <p>Made by Tanishq</p>
       </footer>
     </div>
   );

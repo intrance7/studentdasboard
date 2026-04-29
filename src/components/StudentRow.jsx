@@ -9,25 +9,24 @@ const StudentRow = ({ student, onUpdateScore }) => {
   };
 
   return (
-    <tr className={isPassing ? 'row-pass' : 'row-fail'}>
-      <td className="col-name">{student.name}</td>
-      <td className="col-score">{student.score}</td>
-      <td className="col-status">
-        <span className={`status-badge ${isPassing ? 'status-pass' : 'status-fail'}`}>
-          <span className="dot"></span> {isPassing ? 'PASS' : 'FAIL'}
+    <tr className={isPassing ? 'pass-row' : 'fail-row'}>
+      <td>{student.name}</td>
+      <td>{student.score}</td>
+      <td>
+        <span className={isPassing ? 'status pass' : 'status fail'}>
+          {isPassing ? 'Pass' : 'Fail'}
         </span>
       </td>
-      <td className="col-update">
-        <div className="update-controls">
+      <td>
+        <div className="update-action">
           <input 
             type="number" 
-            className="score-input"
             value={localScore}
             onChange={(e) => setLocalScore(e.target.value)}
             min="0"
             max="100"
           />
-          <button className="save-btn" onClick={handleSave}>SAVE</button>
+          <button onClick={handleSave}>Save</button>
         </div>
       </td>
     </tr>

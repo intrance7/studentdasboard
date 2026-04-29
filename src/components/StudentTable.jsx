@@ -3,38 +3,33 @@ import StudentRow from './StudentRow';
 
 const StudentTable = ({ students, onUpdateScore }) => {
   return (
-    <div className="panel records-panel">
-      <div className="panel-header">
-        <div className="panel-title">STUDENT RECORDS</div>
-        <div className="panel-badge">{students.length} entries</div>
-      </div>
-      <div className="table-container">
-        <table>
-          <thead>
+    <div className="table-container">
+      <h2>Student Records</h2>
+      <table className="student-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Status</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.length === 0 ? (
             <tr>
-              <th>NAME</th>
-              <th>SCORE</th>
-              <th>STATUS</th>
-              <th>UPDATE</th>
+              <td colSpan="4" className="text-center">No records found</td>
             </tr>
-          </thead>
-          <tbody>
-            {students.length === 0 ? (
-              <tr>
-                <td colSpan="4" style={{ textAlign: 'center', padding: '2rem' }}>NO RECORDS FOUND</td>
-              </tr>
-            ) : (
-              students.map(student => (
-                <StudentRow 
-                  key={student.id} 
-                  student={student} 
-                  onUpdateScore={onUpdateScore} 
-                />
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
+          ) : (
+            students.map(student => (
+              <StudentRow 
+                key={student.id} 
+                student={student} 
+                onUpdateScore={onUpdateScore} 
+              />
+            ))
+          )}
+        </tbody>
+      </table>
     </div>
   );
 };

@@ -19,33 +19,26 @@ const AddStudentForm = ({ onAdd }) => {
   };
 
   return (
-    <div className="panel register-panel">
-      <div className="panel-header">
-        <div className="panel-title"><span className="dot"></span> REGISTER STUDENT</div>
-        <div className="panel-badge">NEW ENTRY</div>
-      </div>
-      <form className="add-student-form" onSubmit={handleSubmit}>
-        <div className="input-group">
-          <input 
-            type="text" 
-            placeholder="Student name" 
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-group">
-          <input 
-            type="number" 
-            placeholder="Score (0-100)" 
-            value={score}
-            onChange={(e) => setScore(e.target.value)}
-            required
-            min="0"
-            max="100"
-          />
-        </div>
-        <button type="submit">+ ADD</button>
+    <div className="add-student-container">
+      <h2>Add New Student</h2>
+      <form onSubmit={handleSubmit} className="add-form">
+        <input 
+          type="text" 
+          placeholder="Student Name" 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <input 
+          type="number" 
+          placeholder="Score (0-100)" 
+          value={score}
+          onChange={(e) => setScore(e.target.value)}
+          required
+          min="0"
+          max="100"
+        />
+        <button type="submit">Add Student</button>
       </form>
     </div>
   );
