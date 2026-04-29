@@ -56,7 +56,6 @@ body {
   100% { opacity: 1; }
 }
 
-/* HEADER */
 .terminal-header {
   margin-bottom: 1rem;
 }
@@ -94,7 +93,6 @@ body {
   text-shadow: 0 0 15px var(--cyan-glow);
 }
 
-/* PANELS */
 .panel {
   background-color: var(--bg-panel);
   border: 1px solid var(--border-color);
@@ -132,7 +130,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* STATS */
 .stats-panel {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -164,7 +161,6 @@ body {
   text-shadow: 0 0 10px var(--cyan-glow);
 }
 
-/* FORM */
 .add-student-form {
   display: flex;
   padding: 1.5rem;
@@ -207,7 +203,6 @@ body {
   color: var(--text-bright);
 }
 
-/* TABLE */
 .table-container {
   width: 100%;
 }
@@ -271,7 +266,6 @@ tr.row-fail::before {
   font-size: 1.1rem;
 }
 
-/* STATUS BADGE */
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -311,7 +305,6 @@ tr.row-fail::before {
   box-shadow: 0 0 5px var(--fail-color);
 }
 
-/* UPDATE CONTROLS */
 .update-controls {
   display: flex;
   gap: 0.5rem;
@@ -351,7 +344,6 @@ tr.row-fail::before {
   color: var(--cyan-primary);
 }
 
-/* FOOTER */
 .terminal-footer {
   display: flex;
   justify-content: space-between;
